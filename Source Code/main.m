@@ -1,27 +1,6 @@
-% Tyler Phillips
-% phillity@umail.iu.edu
-% February 12, 2018
-
-%load('all_data_labels.mat')
-%load('Y_dependent.mat')
-%load('File_test.mat')
-%% Bio-Inspired Feature Extraction
-
-% G. Guo, Guowang Mu, Y. Fu and T. S. Huang, 
-% "Human age estimation using bio-inspired features," 
-% 2009 IEEE Conference on Computer Vision and Pattern Recognition, Miami, FL, 2009, pp. 112-119.
-
-% http://ieeexplore.ieee.org/document/5206681/
-%%'
-%%
 load('age estimation/File_train.mat')
 load('age estimation/File_test.mat')
 
-%%  mainn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-% load('Y_train_data.mat')
-
-%%
-disp('hello')
 size = 100;
 rotation = 8;
 band = 4;
@@ -94,7 +73,7 @@ for m = 1:8
         %[row,col] = size(Y_test');
         % concate each Y_return row wise in z
         %z_test(i,1:col) = Y_test';
-        % give this matrix z to PLS!!!
+        % give this matrix z to PLS!
     end
     disp('Done prediction.')
     %checking accuracy of omn 61 test images
@@ -114,12 +93,8 @@ for m = 1:8
     end
     
     disp('Done test dependent variable.')
-    %%% MAE of our model
 
-    disp('Done MAE.')
     MAE = (sum(abs(pred(1:end,1) - Y_test_Age)))/(length(File_test)-2);
-    
-   
     
     %confusion matrix for gender variable
     wrong = 0;
@@ -130,9 +105,6 @@ for m = 1:8
     end
     
     gender_accuracy = 1 - (wrong/(length(File_test)-2));
-    
-    
-    
     
     %saving
     store = 'z';
@@ -160,43 +132,6 @@ for m = 1:8
     size = size + 25;
     break;
 end
-    
-    
-    
-    
-    
-    
-
-
-
-
-% AgeMale = zeros(length(Files_male),2)
-% for k=1:length(Files_male) 
-%    FileNames = Files_male(k).name ;
-%    AgeMale(k,1) = str2num(FileNames(7:8))
-%    AgeMale(k,2) = 0
-% end
-%%
-
-%READ THE FOLLOWING 
-
-%our code will look like this
-
-% n is no of images
-
-%%
-
-%%
-%[XL,YL,XS,YS,BETA] = plsregress(z,Y_train_Age_gender(1:end,1),20);
-
-
-%%
-
-%% checking for one image
-
-%Y_test = bif(strcat(base_path1,Files(218).name), 2, 3);
-%% 
-
 
 
 Y_train_Age_gender = zeros(length(File_train)-2,2);
@@ -244,6 +179,6 @@ for i = 1:length(File_test)-2
     %[row,col] = size(Y_test');
     % concate each Y_return row wise in z
     %z_test(i,1:col) = Y_test';
-    % give this matrix z to PLS!!!
+    % give this matrix z to PLS!
 end
 disp('Done prediction.')

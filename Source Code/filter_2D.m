@@ -7,7 +7,7 @@
 
 % X - input image
 % kernel - convolution kernel (or rather a correlation kernel), a single-channel floating point matrix
-% borderType – pixel extrapolation method
+% borderType â€“ pixel extrapolation method
 
 function Y = filter_2D(X, kernel, border_type)
     [x_rows, x_cols] = size(X);

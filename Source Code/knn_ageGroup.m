@@ -1,27 +1,13 @@
-% Tyler Phillips
-% phillity@umail.iu.edu
-% February 12, 2018
+%% CODE TO CLASSIFY INPUT IMAGE IN ONE OF THE FOLLOWING CLASSES USING K NEAREST NEIGHBORS ALGORITHM
+% CLASS 1: very young (0-12)
+% CLASS 2: young(13-35)
+% CLASS 3: middle age(36-55)
+% CLASS 4: age(56-above)
 
-%load('all_data_labels.mat')
-%load('Y_dependent.mat')
-%load('File_test.mat')
-%% Bio-Inspired Feature Extraction
-
-% G. Guo, Guowang Mu, Y. Fu and T. S. Huang, 
-% "Human age estimation using bio-inspired features," 
-% 2009 IEEE Conference on Computer Vision and Pattern Recognition, Miami, FL, 2009, pp. 112-119.
-
-% http://ieeexplore.ieee.org/document/5206681/
-%%'
-%%
 load('age estimation/File_train.mat')
 load('age estimation/File_test.mat')
 
-%%  mainn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-% load('Y_train_data.mat')
-
 %%
-disp('hello')
 size = 100 ;
 rotation = 12;
 band = 8;
@@ -106,12 +92,6 @@ g_accuracy = strcat(g_accuracy, size_str);
 g_accuracy = strcat(g_accuracy, '.mat');
 save(g_accuracy,'ageLabel_accuracy');
 
-disp('Done saving.')
-    
-
-
-
-
 % AgeMale = zeros(length(Files_male),2)
 % for k=1:length(Files_male) 
 %    FileNames = Files_male(k).name ;
@@ -119,27 +99,3 @@ disp('Done saving.')
 %    AgeMale(k,2) = 0
 % end
 %%
-
-%READ THE FOLLOWING 
-
-%our code will look like this
-
-% n is no of images
-
-%%
-
-%%
-%[XL,YL,XS,YS,BETA] = plsregress(z,Y_train_Age_gender(1:end,1),20);
-
-
-%%
-
-%% checking for one image
-
-%Y_test = bif(strcat(base_path1,Files(218).name), 2, 3);
-%% 
-
-
-
-disp('aya ke nai')
-disp('first')
